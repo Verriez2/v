@@ -4,8 +4,6 @@
   <title>☆☆☆☆☆</title>
   <style>
     body {
-      background: url('https://raw.githubusercontent.com/Verriez2/w.github.io/main/dd.png') no-repeat center center fixed;
-      background-size: contain;
       color: #ffffff;
       font-family: 'Courier New', monospace;
       display: flex;
@@ -15,27 +13,39 @@
       margin: 0;
       padding: 0 20px;
       text-align: justify;
-      animation: zoomAnimation 16s infinite alternate;
     }
-    
+
+    body::before {
+      content: "";
+      background: url('https://raw.githubusercontent.com/Verriez2/w.github.io/main/dd.png') no-repeat center center fixed;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      animation: zoomAnimation 16s infinite alternate;
+      z-index: -1;
+    }
+
     @keyframes zoomAnimation {
       0% {
-        background-size: 100% 100%;
+        transform: scale(1);
       }
       50% {
-        background-size: 120% 120%;
+        transform: scale(1.3);
       }
       100% {
-        background-size: 100% 100%;
+        transform: scale(1);
       }
     }
-    
+
     h1 {
       font-size: 36px;
       margin-bottom: 20px;
       margin-left: 100px;
     }
-    
+
     p {
       font-size: 18px;
       line-height: 1.5;
