@@ -3,30 +3,70 @@
 <head>
     <style>
         body {
-            background-image: url("https://lh3.googleusercontent.com/fife/APg5EOap7m_PrjprrVAm0ejJWYvQJLrz6lme8zlhg-TTs53hwhNk2anDnlinevprT6xNrYnxyWP-RXiZPF7tbXGCO-kC8E7S1DA6Y__3DcShFaQU9FJx5AefTuYnRKkEgxy38wsO1k2H01twqPoIdt0U7Mv8W_S5CgZA9C1a0iHNHByBtiLwUkxX8oZQ4O8RB4ATZdIYbcPuM_2RHANQHi3sTvo_1bj4Z_SlAlAy5ZcY74UwgCDMgaVX98HEEgXCT8d2JMkiSdiC93Uepwgtx_CvAhG49JfG66tHsiI9SbXYraUy_Yryg3WlqPUoZgEYIlrb7w-ucHyyGuBW4dcmF8aJpf8Nqb4ktOhC1xN-oKMyV4HM5LFmKrJDIB237K3VHKsXcXq4dfCIeeR-6Bra8X9F-WtlavkN9Tt1mAo6mrciHIMbjubZ9ydzKcZi1d3__tjO6ONJafDDBOV-yIw_SZpGOsx3v9nfKKDSqGJ_S6hr2RFa6yo3OwRnv0IfclCrBf72BYrgX8eddSi1K5_0l7B1CgMLPfzE8w48ypfCm1EPMaOD8QBlTeaRXXOKygdbtkP_k7sC2rJ_pzZWvsJ1StEsJzyB3OhFID3JonB9zkRV1h0uqyu-5uGeiKMNBTUPsF7umJPfqyd__NofrujBRs4JCgfivxD46MXv0JdAWz2J6rt42zOTmS9WEWfbJuOfEdS4Da9yv90HO1wVelyVOn0ThECTLVkhCFVOKkCj0_MYdvWl3gc6xLim4v-3fC9kBrmPIwUw5RtNgdTlZrYsDr0fXFTUkGTDAZRxlmSMVvNk1X4qPAgZU9nsBOOVM-vQlexFTeZIUsyHiqWAgPW5RyW1urlrHdAEisFPqwL78UBSDO21LyEBrA5Rid8pT7UL79ekjAMWf8X24l4ysDcj4_iIwdF5er_vE1CwuiHG7N1ZnpsoBuprdGXOWXcIiwgrlfrpDxE833jHNTJjPBvA4FaNkIXbhlF5NkSYUy5t-4DrmCVTOIAnFCrZRPS9pfKpiaR8ERizyaHUtaShdrGePxyqVuxmu9b-MGxsnM-BZlstiCncQjl4iaZysFr9gUdRdeCgsJ2lAugjFN_k7TQblBNUdflMekzxoKYaSrZ50-DVl2Zxu6LIBHR-NgPJX_TbfXUtxe0wXlGPjyPKLkxYKKYCzwxY2m9M8xSJWLzZpw2wqQAN_52yZMgtqtdlj4GAEihOkicKNcR8cWrd7N19Ly5CVQ8S9xWdCgPDLg1fx_EUyf9MEJUKB1giajeKil2wuNGXZUAy4veZiZXcTB7XlT2ZzJplmuXMalClqk2PoSEidqb_ETHOsbGeubdJV7phHA4UEXrQuw9Vq7-FHdl39hCoZ7ESRV_BX7ZgDtminwsNxXiC3O3_wvw_Bt1OSiKGC8SLvVKGCOvpqsVQNwnB_ND-V2ssaB42loznSuKzFE-a82nAA07MQa8s7rxA2k261S5OEbhCwFJm2K3aSCYJBiXxryqfag=w1920-h969"); /* Placeholder image URL */
-            background-size: cover;
-            background-position: center;
             margin: 0;
             padding: 0;
+            overflow: hidden;
         }
-        
+
+        #background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url("https://github.com/Verriez2/w.github.io/blob/main/yy.png?raw=true");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
         .ominous-text {
             position: fixed;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            font-family: 'Courier New', monospace; /* Updated font family */
+            font-family: 'Courier New', monospace;
             font-size: 48px;
-            color: #800000; /* Updated text color to dark red */
+            color: #800000;
             text-transform: uppercase;
             cursor: pointer;
-            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Increased shadow */
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
+    <div id="background-image"></div>
     <a href="https://example.com" target="_blank">
         <div class="ominous-text">Enter</div>
     </a>
+
+    <script>
+        window.addEventListener('resize', resizeBackgroundImage);
+
+        function resizeBackgroundImage() {
+            var backgroundImage = document.getElementById('background-image');
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+            var windowAspectRatio = windowWidth / windowHeight;
+
+            var image = new Image();
+            image.src = backgroundImage.style.backgroundImage.slice(5, -2);
+
+            var imageWidth = image.naturalWidth;
+            var imageHeight = image.naturalHeight;
+            var imageAspectRatio = imageWidth / imageHeight;
+
+            if (windowAspectRatio > imageAspectRatio) {
+                backgroundImage.style.width = '100%';
+                backgroundImage.style.height = 'auto';
+            } else {
+                backgroundImage.style.width = 'auto';
+                backgroundImage.style.height = '100%';
+            }
+        }
+
+        resizeBackgroundImage();
+    </script>
 </body>
 </html>
