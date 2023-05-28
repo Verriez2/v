@@ -28,12 +28,62 @@
             animation: zoom 128s infinite; /* Apply the zoom animation */
         }
         
+        .fade-in-image {
+  animation: fadeIn 16s;
+  -webkit-animation: fadeIn 16s;
+  -moz-animation: fadeIn 16s;
+  -o-animation: fadeIn 16s;
+  -ms-animation: fadeIn 16s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
         @keyframes zoom {
             0%, 100% {
                 transform: scale(1); /* Initial and final scale */
             }
             50% {
-                transform: scale(1.1); /* Zoomed scale */
+                transform: scale(1.05); /* Zoomed scale */
+            }
+        }
+        
+        @keyframes zoom {
+            0%, 100% {
+                transform: scale(1); /* Initial and final scale */
+            }
+            50% {
+                transform: scale(1.2); /* Zoomed scale */
+            }
+        }
+        
+        @keyframes zoom {
+            0%, 100% {
+                transform: scale(1.05); /* Initial and final scale */
+            }
+            50% {
+                transform: scale(1); /* Zoomed scale */
             }
         }
         
@@ -42,21 +92,21 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            font-family: 'Courier New', monospace; /* Updated font family */
+            font-family: 'Garamond', serif; /* Updated font family */
             font-size: 48px;
-            color: #ffffff; /* Updated text color to white */
+            color: #a19f9f; /* Updated text color to white */
             text-transform: uppercase;
             cursor: pointer;
-            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7); /* Increased shadow with higher opacity */
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
 <body>
     <div class="background-container">
-        <div class="background-image"></div>
+        <div class="background-image fade-in-image"></div>
     </div>
-    <a href="./0" target="_self">
-        <div class="ominous-text">↑</div>
+    <a href="./second_page" target="_self">
+        <div class="ominous-text fade-in-image">reflect</div>
     </a>
 </body>
 </html>
