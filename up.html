@@ -27,6 +27,47 @@
             height: 100%;
         }
         
+        .fade-in-image {
+  animation: fadeIn 16s;
+  -webkit-animation: fadeIn 16s;
+  -moz-animation: fadeIn 16s;
+  -o-animation: fadeIn 16s;
+  -ms-animation: fadeIn 16s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+        @keyframes zoom {
+            0%, 100% {
+                transform: scale(1); /* Initial and final scale */
+            }
+            50% {
+                transform: scale(1.05); /* Zoomed scale */
+            }
+        }
+        
         @keyframes zoom {
             0%, 100% {
                 transform: scale(1); /* Initial and final scale */
@@ -52,10 +93,10 @@
 </head>
 <body>
     <div class="background-container">
-        <div class="background-image"></div>
+        <div class="background-image fade-in-image"></div>
     </div>
     <a href="./U" target="_self">
-        <div class="ominous-text">↑</div>
+        <div class="ominous-text fade-in-image">look up</div>
     </a>
 </body>
 </html>
