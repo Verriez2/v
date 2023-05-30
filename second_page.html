@@ -26,15 +26,16 @@
             background-position: center;
             width: 100%;
             height: 100%;
-            animation: zoom 80s infinite; /* Apply the zoom animation */
+            animation: zoom 32s infinite; /* Apply the zoom animation */
         }
         
         @keyframes zoom {
             0%, 100% {
-                transform: scale(1.3); /* Initial and final scale */
+                transform: scale(2.4); /* Initial and final scale */
             }
             50% {
                 transform: scale(1.5); /* Zoomed scale */
+                transform: rotate(45deg);
             }
         }
 
