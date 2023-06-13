@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Song List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <style>
     body {
       background-color: black;
@@ -11,11 +12,14 @@
 
     .container {
       display: flex;
-      justify-content: space-between;
+      justify-content: center; /* Align columns in the center */
+      flex-wrap: wrap; /* Allow columns to wrap */
     }
 
     .column {
       flex-basis: 60%;
+      max-width: 600px; /* Limit column width for better readability on small screens */
+      margin: 10px; /* Add some margin between columns */
     }
 
     .song-list {
@@ -37,7 +41,7 @@
 <body>
   <br><br><br><br><br>
   <div class="container">
-    <div class="column" style="margin-left: 300px;">
+    <div class="column">
       <h2>Best Oldies</h2>
       <ul class="song-list">
 	<li><a href="https://open.spotify.com/track/78RIER8V6EhrqVPOBi2GYa?si=Yaz_lhpzSP2bddstoFShrw&context=spotify%3Atrack%3A78RIER8V6EhrqVPOBi2GYa">Here Comes The Rain Again – Eurythmics</a></li>
@@ -89,12 +93,9 @@
         <li><a href="https://open.spotify.com/track/4tRhRLBxIZ34Iw0eCuiC03?si=b11c95ab55e84a74">Miss You - South Star</a></li>
         <li><a href="https://open.spotify.com/track/2qlo9lm8HSqy7T2dxiOZY6?si=b2f04a01f0d74785">Crystallize - Lindsey Stirling</a></li>
       </ul>
-
- <br><br><br><br><br><br><br>
-   <h2><a href="./H" style="color: black; margin-left: 400px; font-size: 10px; text-decoration:none;">✰</a></h2> </div>
-
+    </div>
     <div class="column">
-	  <h2>Best Somber</h2>
+      <h2>Best Somber</h2>
       <ul class="song-list">
         <li><a href="https://open.spotify.com/track/1PDP7mLiAMwhfmgIwzhOm2?si=a50bc7abe1bd4fdf">Yebba’s Heartbreak – Yebba</a></li>
         <li><a href="https://open.spotify.com/track/73VzVD9pHiD2ycmqQK4zZm?si=cfdb4b2e2c2a419a">Dialing Drunk – Ethan Gruska</a></li>
